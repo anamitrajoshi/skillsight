@@ -28,6 +28,14 @@
                 <div style="width: 300px; height: 204.20px; left: 4px; top: 108px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 40.73px; display: inline-flex">
                     <form>
                         <div style="margin-top: 30px; text-align: left;">
+                            <input type="radio" id="Foodie" name="Foodie" style="margin-right: 18px;">
+                            <label for="Foodie" style="font-size: 24px; ">Foodie</label>
+                        </div>
+                        <div style="margin-top: -26px; text-align: right;">
+                            <input type="radio" id="Foodie" name="Foodie" style="margin-right: 18px;">
+                            <label for="Foodie" style="font-size: 24px; ">Cook</label>
+                        </div>
+                        <div style="margin-top: 30px; text-align: left;">
                             <label for="username" style="display: block; font-size: 22px; margin-bottom: 5px; left: 0.02vw">Username</label>
                             <input type="text" id="username" name="username" style="width: 100%; padding: 10px; font-size: 22px;">
                         </div>
@@ -65,12 +73,12 @@
     // https://firebase.google.com/docs/web/setup#available-libraries
   
     const firebaseConfig = {
-        apiKey: "AIzaSyAnK4R0DgS0eWA2D-xlEUbLS9Dh2EJeRqQ",
-        authDomain: "skillsight-c4999.firebaseapp.com",
-        projectId: "skillsight-c4999",
-        storageBucket: "skillsight-c4999.appspot.com",
-        messagingSenderId: "94130220736",
-        appId: "1:94130220736:web:65fa688fb9845f05ca8725"
+      apiKey: "AIzaSyAnK4R0DgS0eWA2D-xlEUbLS9Dh2EJeRqQ",
+            authDomain: "skillsight-c4999.firebaseapp.com",
+            projectId: "skillsight-c4999",
+            storageBucket: "skillsight-c4999.appspot.com",
+            messagingSenderId: "94130220736",
+            appId: "1:94130220736:web:65fa688fb9845f05ca8725"
     };
   
     // Initialize Firebase
@@ -94,12 +102,17 @@
         get(userRef)
           .then((snapshot) => {
             console.log(snapshot.val()); // Log the snapshot value to the console
-            alert('User logged in')
+  
             if (snapshot.exists()) {
               const userData = snapshot.val();
               const usertype = userData.usertype;
+  
               // Redirect based on usertype
-              
+              if (usertype === "buyer") {
+                window.location.href = 'kitchens_page.html';
+              } else if (usertype === "seller") {
+                window.location.href = 'change_menu.html';
+              }
             } else {
               // Handle the case where user data doesn't exist
               alert('User data not found');
