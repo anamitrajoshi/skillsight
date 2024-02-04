@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage</title>
+<style>
+/* CSS Styles */
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+
+.background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1541140134513-85a161dc4a00?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace 'your-background-image.jpg' with the path to your image */
+        background-size:contain;
+        z-index: -1;
+    }
+    
+
+    header {
+  background-color: #161A30;
+  color: #F0ECE5;
+  padding: 0.3px 30px;
+  
+}
+
+
+.container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.image-container {
+  margin-top: -30px;
+  margin-left: -150px;
+  float: left; /* Move the image to the left */
+  width: 50%; /* Set the width to 50% to make room for other content */
+}
+
+.image-container img {
+  max-width: 80%; /* Ensure the image doesn't exceed its container */
+  height: auto; /* Maintain aspect ratio */
+}  
+
+h1 {
+  margin-bottom: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 30px;
+  
+}
+h2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+  
+}
+
+#content {
+  margin-top: 60px;
+}
+
+
+/* New CSS for buttons */
+.button-container {
+  position: fixed;
+  top: 50%;
+  right: 200px;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.button-container button {
+  display: block;
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* margin-bottom: 40px; */
+  margin-top: 20px;
+  padding: 20px 70px; /* Increased button size */
+  background-color: #31304D;
+  color: #F0ECE5;
+  border: none;
+  cursor: pointer;
+  width: 400px; /* Set button width */
+}
+
+.button-container button:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+
+<!-- HTML Structure -->
+<header>
+  <h1>SkillSight</h1>
+  <h2>AI Harmony for Holistic Student Success</h2>
+</header>
+
+<div class="container">
+    <div class="background-image"></div>
+    <div class="image-container">
+        <img src="download-removebg-preview.png" alt="Image">
+
+  <section id="content">
+  </section>
+</div>
+
+<!-- New HTML for buttons -->
+<div class="button-container">
+  <button id="aboutUs">About Us</button>
+  <button id="studentAnalysis">Student Analysis</button>
+  <button id="chatbot">Skilla - AI</button>
+</div>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get the "About Us" button element
+      var aboutUsButton = document.getElementById("aboutUs");
+      
+      // Add a click event listener to the "About Us" button
+      aboutUsButton.addEventListener("click", function() {
+        // Redirect to index.html when the button is clicked
+        window.location.href = "aboutus.html";
+      });
+      
+      // Get the "Student Analysis" button element
+      var studentAnalysisButton = document.getElementById("studentAnalysis");
+      
+      // Add a click event listener to the "Student Analysis" button
+      studentAnalysisButton.addEventListener("click", function() {
+        // Redirect to studentAnalysis.html when the button is clicked
+        window.location.href = "test2.html";
+      });
+      
+      // Get the "Skilla - AI" button element
+      var chatbotButton = document.getElementById("chatbot");
+      
+      // Add a click event listener to the "Skilla - AI" button
+      chatbotButton.addEventListener("click", function() {
+        // Redirect to chatbot.html when the button is clicked
+        window.open("http://127.0.0.1:5501")
+      });
+    });
+    </script>
+    
+</body>
+</html>

@@ -108,6 +108,27 @@
             gap: 40.73px;
         }
 
+        .back-link {
+    text-decoration: none;
+    display: block;
+    width: 362px;
+    height: 63px;
+    left: 6vw;
+    top: 603px;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    line-height: 63px; /* Vertically center the text */
+    border-radius: 5px;
+    color: #fff; /* Text color */
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    background-color: #31304D; /* Background color on hover */
+    color: #B6BBC4; /* Text color on hover */
+}
         label {
             display: block;
             font-size: 22px;
@@ -135,31 +156,6 @@
             font-size: 18px;
         }
 
-        .back-link {
-            text-decoration: none;
-            display: block;
-            width: 362px;
-            height: 63px;
-            left: 18vw;
-            top: 613px;
-            position: absolute;
-            background: #47495b;
-            justify-content: center;
-        }
-
-        .back-text {
-            left: 160px;
-            top: 17px;
-            position: absolute;
-            text-align: center;
-            color: black;
-            font-size: 22.40px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.78px;
-            word-wrap: break-word;
-            justify-content: center;
-        }
     </style>
 </head>
 
@@ -188,13 +184,12 @@
                         <div>
                             <input class="signup" id="signUp" name="signUp" type="submit" value="SIGN UP">
                         </div>
+
                     </form>
                 </div>
             </div>
+            <a href="login.html" class="back-link">Already a user? Log in</a> <!-- Added link to login.html -->
         </div>
-        <a href="home_trial-2.html" class="back-link">
-            <div class="back-text">Back</div>
-        </a>
     </div>
 
     <script type="module">
@@ -241,7 +236,7 @@
                     
                 })
                 .then(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'home.html';
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
