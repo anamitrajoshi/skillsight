@@ -74,9 +74,22 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  
+  #back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #31304D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
+    <a href="home.html" id="back-button">Back</a>
   <div id="chat-container">
     <h1>Skilla AI</h1>
     <div id="chat-history"></div>
@@ -89,6 +102,11 @@
     <img src="loader.gif" width="70px" alt="Loading...">
   </div>
   <script>
+    function goToHomePage() {
+      // Redirect to the home page
+      window.location.href = "home.html";
+    }
+
     const chatHistory = document.getElementById('chat-history');
     const userInput = document.getElementById('user-input');
     const form = document.getElementById('chat-form');
@@ -110,18 +128,9 @@
         console.log(data);
         const botMessage = data.response;
         console.log(botMessage);
-
-        // Create user message element
-        const userMessageElement = document.createElement('div');
-        userMessageElement.classList.add('user-message');
-        userMessageElement.textContent = userMessage;
-        chatHistory.appendChild(userMessageElement);
-
-        // Create bot message element
-        const botMessageElement = document.createElement('div');
-        botMessageElement.classList.add('bot-message');
-        botMessageElement.textContent = botMessage;
-        chatHistory.appendChild(botMessageElement);
+        // Add chat message to the chat history
+        chatHistory.innerHTML += <div class="user-message">${userMessage}</div>;
+        chatHistory.innerHTML += <div class="bot-message">${botMessage}</div>;
 
         // Scroll to the bottom of the chat history
         chatHistory.scrollTop = chatHistory.scrollHeight;

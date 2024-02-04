@@ -4,261 +4,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkillSight</title>
-
+    <title>Homepage</title>
     <style>
+        /* CSS Styles */
         body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1541140134513-85a161dc4a00?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white; /* Text color on top of the background */
         }
 
-        
-    .background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('https://images.unsplash.com/photo-1541140134513-85a161dc4a00?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
-        background-size: cover;
-        z-index: -1;
-    }
-        .container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .logo {
-            width: 390px;
-            height: 156px;
-            left: 18vw;
-            top: 284px;
-            position: absolute;
-            text-align: center;
-            color: #161A30;
-            font-size: 80px;
-            font-weight: 700;
-            letter-spacing: 4.06px;
-        }
-
-        .tagline {
-            width: 460px;
-            height: 40px;
-            left: 15vw;
-            top: 416px;
-            position: absolute;
-            text-align: center;
-            color: #31304D;
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 0.78px;
-            word-wrap:normal;
-        }
-
-        .form-container {
-            height: 710px;
-            width: 30vw;
-            padding: 57px 37px 77.25px;
-            left: 58vw;
-            top: 20px;
-            position: absolute;
-            border-radius: 15.97px;
+        header {
+            background-color: #161A30;
+            color: #F0ECE5;
+            padding: 0.3px 30px;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            background-color: #31304D;
         }
 
-        .form {
-            width: 319px;
-            height: 375.75px;
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
             position: relative;
         }
 
-        .form-title {
-            width: 319px;
-            height: 81px;
-            position: absolute;
-            text-align: center;
-            color: #F0ECE5;
-            font-size: 40px;
+        .image-container {
+            margin-top: -30px;
+            margin-left: -150px;
+            float: left; /* Move the image to the left */
+            width: 50%; /* Set the width to 50% to make room for other content */
+        }
+
+        .image-container img {
+            max-width: 80%; /* Ensure the image doesn't exceed its container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        h1 {
+            margin-bottom: 0;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: 700;
-            line-height: 29.60px;
-            word-wrap: break-word;
-            top: 0;
-            left: 0;
+            font-size: 30px;
         }
 
-        .form-content {
-            width: 300px;
-            height: 204.20px;
-            position: absolute;
-            top: 108px;
-            left: 4px;
-            color: #F0ECE5;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 40.73px;
+        h2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px;
         }
 
-        label {
+        #content {
+            margin-top: 60px;
+        }
+
+        /* New CSS for buttons and logout link */
+        .button-container {
+            position: fixed;
+            top: 50%;
+            right: 200px;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .button-container button {
             display: block;
-            font-size: 22px;
-            margin-bottom: 5px;
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 20px;
+            padding: 20px 70px; /* Increased button size */
+            background-color: #31304D;
             color: #F0ECE5;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 22px;
-            margin-bottom: 20px;
-        }
-
-        .signup {
-            margin-top: 32px;
-            background-color: #B6BBC4;
-            color: #161A30;
             border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            width: 400px; /* Set button width */
         }
 
-        .back-link {
+        .button-container button:hover {
+            background-color: #555;
+        }
+
+        /* Logout link style */
+        #logout {
+            color: white;
             text-decoration: none;
-            display: block;
-            width: 362px;
-            height: 63px;
-            left: 18vw;
-            top: 613px;
-            position: absolute;
-            background: #47495b;
-            justify-content: center;
-        }
-
-        .back-text {
-            left: 160px;
-            top: 17px;
-            position: absolute;
-            text-align: center;
-            color: black;
-            font-size: 22.40px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.78px;
-            word-wrap: break-word;
-            justify-content: center;
+            font-size: 20px;
+            margin-right: 20px;
         }
     </style>
 </head>
 
 <body>
+
+    <!-- HTML Structure -->
+    <header>
+        <h1>SkillSight <br> AI Harmony for Holistic Student Success</h1>
+        <!-- <h2>AI Harmony for Holistic Student Success</h2> -->
+        <a href="login.html" id="logout">Logout</a>
+    </header>
+
     <div class="container">
-        <div class="background-image"></div>
-        <div class="logo">SkillSight</div>
-        <div class="tagline">AI Harmony for Holistic Student Success</div>
-        <div class="form-container">
-            <div class="form">
-                <div class="form-title">Login</div>
-                <div class="form-content">
-                    <form>
-                        <div>
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="username">
-                        </div>
-                        <div>
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div>
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password">
-                        </div>
-                        <div>
-                            <input class="signup" id="loginButton" name="loginButton" type="submit" value="Log In">
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="image-container">
+            <img src="download-removebg-preview.png" alt="Image">
         </div>
-        <a href="home_trial-2.html" class="back-link">
-            <div class="back-text">Back</div>
-        </a>
+
+        <section id="content">
+            <!-- Your content goes here -->
+        </section>
     </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
-    
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        const firebaseConfig = {
-            apiKey: "AIzaSyAnK4R0DgS0eWA2D-xlEUbLS9Dh2EJeRqQ",
-            authDomain: "skillsight-c4999.firebaseapp.com",
-            projectId: "skillsight-c4999",
-            storageBucket: "skillsight-c4999.appspot.com",
-            messagingSenderId: "94130220736",
-            appId: "1:94130220736:web:65fa688fb9845f05ca8725"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const database = getDatabase(app);
-        const auth = getAuth();
-        const loginButton = document.getElementById('loginButton');
-      
-      // ... (previous code)
-      
-      loginButton.addEventListener('click', (e) => {
-        e.preventDefault() 
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-      
-        signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            const user = userCredential.user;
-            const userRef = ref(database, 'users/' + user.uid);
-            get(userRef)
-              .then((snapshot) => {
-                console.log(snapshot.val()); 
-                alert('User logged in')
-                if (snapshot.exists()) {
-                  const userData = snapshot.val();
-                  const usertype = userData.usertype;
-                  // Redirect based on usertype
-                  window.location.href = 'signup.html';
-                } else {
-                  // Handle the case where user data doesn't exist
-                  alert('User data not found');
-                }
-              })
-              .catch((error) => {
-                console.error('Error getting user data:', error);
-                alert('Error getting user data');
-              });
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-      
-            alert(errorMessage);
-          });
-      });
-      
-    
-      </script>
-      
-    </html>
+    <!-- New HTML for buttons -->
+    <div class="button-container">
+        <button id="aboutUs">About Us</button>
+        <button id="studentAnalysis">Student Analysis</button>
+        <button id="chatbot">Skilla - AI</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Get the "About Us" button element
+        var aboutUsButton = document.getElementById("aboutUs");
+
+        // Add a click event listener to the "About Us" button
+        aboutUsButton.addEventListener("click", function () {
+            // Redirect to index.html when the button is clicked
+            window.location.href = "aboutus.html";
+        });
+
+        // Get the "Student Analysis" button element
+        var studentAnalysisButton = document.getElementById("studentAnalysis");
+
+        // Add a click event listener to the "Student Analysis" button
+        studentAnalysisButton.addEventListener("click", function () {
+            // Redirect to studentAnalysis.html when the button is clicked
+            window.location.href = "test2.html";
+        });
+
+        // Get the "Skilla - AI" button element
+        var chatbotButton = document.getElementById("chatbot");
+
+        // Add a click event listener to the "Skilla - AI" button
+        chatbotButton.addEventListener("click", function () {
+            // Redirect to chatbot.html when the button is clicked
+            window.open("http://127.0.0.1:5501");
+        });
+    </script>
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@ const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@googl
 const dotenv = require('dotenv').config()
 
 const app = express();
-const port = process.env.PORT || 5501;
+const port = process.env.PORT || 3000;
 app.use(express.json());
 const MODEL_NAME = "gemini-pro";
 const API_KEY = process.env.API_KEY;

@@ -13,17 +13,59 @@
             background-image: url('https://images.unsplash.com/photo-1541140134513-85a161dc4a00?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
         }
 
         #header {
             background-color: #161830;
             color: white;
             padding: 10px;
-            text-align: left;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        #header button {
+            font-size: 18px;
+            background-color: #31304D;
+            color: #F0ECE5;
+            border: none;
+            cursor: pointer;
+            padding: 8px 16px;
         }
 
         #content {
             padding: 20px;
+            font-size:20px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+
+        #content-text {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        #image-container {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #image-container img {
+            max-width: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
@@ -31,31 +73,43 @@
 <body>
     <div id="header">
         <h1>About Us</h1>
+        <button onclick="goToHomePage()">Back</button>
     </div>
     
     <div id="content">
-        <!-- Your content goes here -->
-        <p>To summarize, our solution focuses on the following major points:</p>
-             <p>At-Risk Identification</p>
-             <p>Resource Allocation</p>
-             <p>Personalized Learning</p>
-             <p>Data Visualization</p>
-        <p> Our solution resonates with the following core parts of the hackathon:</p>
-            <p>Equity in access, possibilities, and success in education: By accommodating
-                resources appropriately, ensuring that each student is moving at their own
-                pace through personalized learning.</p>
-            <p>Assessment and Progress Tracking: To identify early risks, we can keep track
-                of assessments and each student’s progress.</p>
-            <p>Ongoing Monitoring and Evaluation: We can do this with data visualization.</p>
-            <p>We can remove the existing biases with the help of AI during resource distribution
-                by ensuring that any biasing label is not included during the training and testing of
-                the model</p>
-            
-
+        <div id="content-text">
+            <!-- Your content goes here -->
+            <p>To summarize, our solution focuses on the following major points:</p>
+            <ul>
+                <li>At-Risk Identification</li>
+                <li>Resource Allocation</li>
+                <li>Data Visualization</li>
+            </ul>
+                
+            <p> Our solution resonates with the following core parts of the hackathon:</p>
+            <ul>
+                <li>Equity in access, possibilities, and success in education: By accommodating
+                    resources appropriately, ensuring that each student is moving at their own
+                    pace through personalized learning.</li>
+                <li>Assessment and Progress Tracking: To identify early risks, we can keep track
+                    of assessments and each student's progress.</li>
+                <li>Ongoing Monitoring and Evaluation: We can do this with data visualization.</li>
+            </ul>
+                <p>We can remove the existing biases with the help of AI during resource distribution
+                    by ensuring that any biasing label is not included during the training and testing of
+                    the model</p>
+        </div>
+        <div id="image-container">
+            <img src="image-from-rawpixel-id-6503727-png.png" alt="Your Image">
+        </div>
     </div>
 
     <script>
         // Your JavaScript code can go here if needed
+        function goToHomePage() {
+            // Redirect to the home page
+            window.location.href = "home.html";
+        }
     </script>
 </body>
 
