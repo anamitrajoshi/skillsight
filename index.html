@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Chatbot</title>
+<title>Skilla</title>
 <style>
   body {
     font-family: sans-serif;
@@ -117,10 +117,11 @@
         userMessageElement.textContent = userMessage;
         chatHistory.appendChild(userMessageElement);
 
-        // Create bot message element
+        // Create bot message element with extra spacing
         const botMessageElement = document.createElement('div');
         botMessageElement.classList.add('bot-message');
-        botMessageElement.textContent = botMessage;
+        const botMessageWithSpacing = botMessage.replace(/\n/g, '<br><br>'); // Add two line breaks for each newline character
+        botMessageElement.innerHTML = botMessageWithSpacing;
         chatHistory.appendChild(botMessageElement);
 
         // Scroll to the bottom of the chat history
